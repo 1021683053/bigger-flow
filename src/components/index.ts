@@ -1,0 +1,1 @@
+export { RelationMatrix } from './RelationMatrix'
