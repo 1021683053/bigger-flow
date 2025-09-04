@@ -5,9 +5,10 @@
   "type": "module",
   "main": "lib/lib.cjs.js",
   "module": "lib/lib.es.js",
+  "types": "lib/types/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build -c vite.lib.config.ts",
+    "build": "tsc -b && vite build -c ./vite.lib.config.ts",
     "build:web": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

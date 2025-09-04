@@ -5,6 +5,8 @@ export type NodeData = {
   label: string
   // 样式
   style?: React.CSSProperties
+  // className?: string
+  className?: string
   // 方向
   direction?: Direction
   // 动态 handle

@@ -22,6 +22,11 @@ const nodes: RelationMatrixNode[] = [
         color: '#FFF',
         fontSize: 20
       },
+      elementProps: {
+        onClick: ()=>{
+          alert('1')
+        }
+      },
       render: (element, node) => {
         console.log(element, node)
         return (

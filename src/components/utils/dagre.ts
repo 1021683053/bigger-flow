@@ -5,7 +5,7 @@ export type DagreGraphOptions = {
   direction: 'TB' | 'LR';
 } & GraphLabel
 
-export const getDagreElements = (nodes: Node[], edges: Edge[], options: DagreGraphOptions) => {
+export const getDagreElements = (nodes: Node[], edges: Edge[], options: DagreGraphOptions): { nodes: Node[], edges: Edge[] } => {
   const { direction = 'LR', nodesep = 50, ranksep = 100, ...graphLabel } = options;
   const graph = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({})).setGraph({
     rankdir: direction,
