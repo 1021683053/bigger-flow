@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: 'lib',
     copyPublicDir: false,
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', '@dagrejs/dagre', '@xyflow/react', 'lodash-es', 'classnames' ],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@dagrejs/dagre', '@xyflow/react', 'lodash-es', 'classnames', 'nanoid' ],
     },
   },
 })
