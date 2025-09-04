@@ -226,7 +226,7 @@ export const Example001 = ()=>{
       <h2>Relation Matrix Example</h2>
       <div style={{ width: '100%', flex: 1}} className='example-001'>
         <ReactFlowProvider>
-          <RelationMatrix edges={elements.edges} nodes={elements.nodes} flowProps={{ fitView: true }} layout='dagre' />
+          <RelationMatrix edges={elements.edges} nodes={elements.nodes} flowProps={{ fitView: true }} layout='dagre' backgroundProps={{ bgColor: '#f0f2f5' }} />
         </ReactFlowProvider>
       </div>
     </div>

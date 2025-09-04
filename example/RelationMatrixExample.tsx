@@ -158,19 +158,19 @@ export const RelationMatrixExample = ()=>{
       
       <div style={{ width: '100%', height: 400 }} className='example-relation-matrix-horizontal'>
         <ReactFlowProvider>
-          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' />
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' backgroundProps={{ bgColor: '#f0f2f5' }} />
         </ReactFlowProvider>
       </div>
 
       <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-vertical'>
         <ReactFlowProvider>
-          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{  }} layout='dagre' direction='TB' />
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{  }} layout='dagre' direction='TB' backgroundProps={{ bgColor: '#f0f2f5' }} />
         </ReactFlowProvider>
       </div>
 
       <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-horizontal'>
         <ReactFlowProvider>
-          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{ align: "DL" }} layout='dagre' />
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{ align: "DL" }} layout='dagre' backgroundProps={{ bgColor: '#f0f2f5' }} />
         </ReactFlowProvider>
       </div> 
     </div>

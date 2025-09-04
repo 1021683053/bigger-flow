@@ -1,69 +1,134 @@
-# React + TypeScript + Vite
+# bigger-flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 介绍
 
-Currently, two official plugins are available:
+`bigger-flow` 是一个基于 `@xyflow/react` 和 `dagre` 的关系矩阵组件，旨在简化复杂关系图的展示和管理。它提供了自动布局功能，使用户能够轻松地可视化节点和它们之间的连接关系。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**简单案例**
+![relation-matrix](./screenshot/01.png)
+![relation-matrix](./screenshot/02.png)
+![relation-matrix](./screenshot/03.png)
+**复杂案例**
+![relation-matrix](./screenshot/04.png)
 
-## Expanding the ESLint configuration
+### 使用教程
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Step 1: 安装依赖**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install bigger-flow
+# OR
+pnpm add bigger-flow
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Step 2: 引入组件**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```ts
+import { RelationMatrix } from 'bigger-flow';
+import 'bigger-flow/lib/styles.css';
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
+**Step 3: 使用组件**
+
+```tsx
+import { RelationMatrix, ReactFlowProvider, type RelationMatrixNode, type RelationMatrixEdge } from 'bigger-flow'
+
+// 描述节点
+const nodes: RelationMatrixNode[] ={
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+    id: '1',
+    data: { label: 'Sample 1' },
+    type: 'sample',
   },
-])
+  {
+    id: '2',
+    data: { label: 'Sample 2' },
+    type: 'sample',
+  },
+}
+
+// 描述连线
+const edges: RelationMatrixEdge[] = {
+  { source: '1', target: '2' },
+}
+
+export const App = () => {
+  return (
+    <ReactFlowProvider>
+      <RelationMatrix
+        nodes={nodes}
+        edges={edges}
+        layout='dagre'
+        flowProps={{ fitView: true }}
+        backgroundProps={{ bgColor: '#f0f2f5' }}
+      />
+    </ReactFlowProvider>
+  );
+};
+
+```
+
+### 本地启动事例代码
+
+```bash
+pnpm install
+pnpm dev
+```
+
+### 类型描述
+
+```typescript
+
+// RelationMatrix 组件 props
+export type RelationMatrixProps = {
+  nodes?: RelationMatrixNode[] // node 节点
+  edges?: RelationMatrixEdge[] // edge 连线
+  layout?: 'dagre' | false // 自动布局
+  direction?: Direction // 布局方向 'TB' | 'LR'
+  fitViewOnResize?: boolean // 是否在窗口大小变化时适应视图
+  flowProps?: ReactFlowProps // 传递给 ReactFlow 的属性。参阅：@xyflow/react 的 ReactFlowProps
+  backgroundProps?: BackgroundProps // 传递给 Background 的属性。参阅：@xyflow/react 的 BackgroundProps
+  dagreOptions?: Partial<DagreGraphOptions> // dagre 布局配置，layout=dagre有效。参阅： @dagrejs/dagre 的 GraphLabel 配置
+}
+
+
+// RelationMatrixNode 节点类型
+export type RelationMatrixNode = {
+  id: string
+  type: keyof typeof nodeTypes // 仅支持 sample 类型
+  data: SampleData // 这个传递控制 sample 的数据
+ } & Partial<Omit<Node, 'data' | 'type' | 'id'>>
+
+// SampleData 节点类型
+export type SampleData = {
+  label: string
+  // 样式
+  style?: React.CSSProperties
+  // className?: string
+  className?: string
+  // 方向
+  direction?: Direction
+  // 动态 handle
+  dynamicHandle?: boolean
+  // 是否自定义 render
+  render?: (element: ReactElement, nodeProps: NodeProps) => ReactNode
+  // 扩展渲染
+  extraRender?: (element: ReactElement | null, nodeProps: NodeProps) => ReactNode
+  // sample node 容器属性，可以添加事件或者ref
+  elementProps?: HTMLProps<HTMLDivElement>
+  // 角标定义
+  marker?: {
+    label: string
+    color?: string
+    backgroundColor?: string
+    type?: 'line' | 'outline'
+    style?: React.CSSProperties,
+    render?: (element: React.ReactNode, node: NodeProps) => React.ReactNode
+  }
+  // 其他数据
+  [index: string]: any
+}
+
+// 连线节点
+export type RelationMatrixEdge = Omit<Edge, 'id'> & { id?: string }
 ```

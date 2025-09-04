@@ -47,7 +47,7 @@ export const NodesExample = () => {
   const elements = getDagreElements(nodes, edges, { direction: 'LR' });
   return (
     <ReactFlow nodes={elements.nodes} edges={elements.edges} nodeTypes={nodeTypes} proOptions={{ hideAttribution: true }} fitView>
-      <Background />
+      <Background bgColor='#f0f2f5' />
     </ReactFlow>
   );
 };
