@@ -1,0 +1,1 @@
+export type Direction = 'TB' | 'LR' // LR 横向，TB 纵向

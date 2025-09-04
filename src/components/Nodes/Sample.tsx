@@ -17,7 +17,7 @@ export type SampleData = NodeData & {
 export const Sample = (props: NodeProps)=>{
   const { id, width = Sample.defaultSize.width, height = Sample.defaultSize.height } = props
   const data = props.data as SampleData
-  const { label, style = {}, dynamicHandle = true, render } = data
+  const { label, style = {}, dynamicHandle = true, render, direction = 'LR' } = data
 
   const { getEdges } = useReactFlow()
   const { income, outcome } = useMemo(()=>{
@@ -49,11 +49,11 @@ export const Sample = (props: NodeProps)=>{
   const element = (
     <div className='bigger-node-sample' style={{ width, height, ...style }}>
       {
-        income ? <Handle type="target" position={Position.Left} /> : null
+        income ? <Handle type="target" position={ direction === 'LR' ? Position.Left : Position.Top} isConnectable={props.isConnectable} /> : null
       }
       {label}
       {
-        outcome ? <Handle type="source" position={Position.Right} /> : null
+        outcome ? <Handle type="source" position={direction === 'LR' ? Position.Right : Position.Bottom} isConnectable={props.isConnectable} /> : null
       }
       {marker}
       {extra}

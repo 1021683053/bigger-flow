@@ -151,7 +151,10 @@ export const RelationMatrixExample = ()=>{
     <div className="example-container">
       <h2>Relation Matrix Example</h2>
       <div style={{ width: '100%', height: 400 }}>
-        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} />
+        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' />
+      </div>
+      <div style={{ width: '100%', height: 400 }}>
+        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' direction='TB' />
       </div>
     </div>
   )
