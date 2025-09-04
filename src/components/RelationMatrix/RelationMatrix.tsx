@@ -16,10 +16,11 @@ export type RelationMatrixProps = {
   nodes?: RelationMatrixNode[]
   edges?: RelationMatrixEdge[]
   flowProps?: ReactFlowProps
+  dagreOptions?: Parameters<typeof getDagreElements>[2]
 }
 
 export const RelationMatrix = (props: RelationMatrixProps)=>{
-
+  const { dagreOptions, edges = [] } = props;
   // 解析 node
   const nodes = useMemo(()=>{
     return (props.nodes || []).map(node => {
@@ -37,13 +38,16 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
     })
   }, [props.nodes])
 
+  // 生成布局
   const elements = useMemo(()=>{
-    return getDagreElements(nodes, props.edges || [], {
+    return getDagreElements(nodes, edges || [], {
       direction: 'LR',
       horizontalGap: 100,
       verticalGap: 50,
+      ...dagreOptions
     })
-  }, [nodes, props.edges])
+  }, [nodes, edges, dagreOptions])
+
   return (
     <ReactFlow
       nodes={elements.nodes}
