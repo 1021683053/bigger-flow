@@ -5,9 +5,9 @@ import { Example } from './Example'
 import './global.less';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  // <StrictMode>
     <BrowserRouter>
       <Example />
     </BrowserRouter>
-  </StrictMode>,
+  // </StrictMode>,
 )

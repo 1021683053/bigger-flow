@@ -1,6 +1,7 @@
 import { ReactFlow, Background, useReactFlow, type Edge, type ReactFlowProps, type Node, type BackgroundProps } from '@xyflow/react'
 import { nodeTypes } from '../Nodes'
 import { useEffect, useMemo, useRef } from 'react'
+import { nanoid } from 'nanoid'
 import { getDagreElements, type DagreGraphOptions } from '../utils'
 import { type SampleData } from '../Nodes/Sample'
 import { type Direction } from '../interface'
@@ -11,7 +12,7 @@ export type RelationMatrixNode = {
   data: SampleData
  } & Partial<Omit<Node, 'data' | 'type' | 'id'>>
 
-export type RelationMatrixEdge = Edge
+export type RelationMatrixEdge = Omit<Edge, 'id'> & { id?: string }
 
 export type RelationMatrixProps = {
   nodes?: RelationMatrixNode[]
@@ -25,7 +26,7 @@ export type RelationMatrixProps = {
 }
 
 export const RelationMatrix = (props: RelationMatrixProps)=>{
-  const { dagreOptions, layout = 'dagre', edges = [], direction = 'LR', backgroundProps = {}, flowProps = {}, fitViewOnResize = true } = props;
+  const { dagreOptions, layout = 'dagre', direction = 'LR', backgroundProps = {}, flowProps = {}, fitViewOnResize = true } = props;
   const flowRef = useRef<HTMLDivElement>(null);
   const { fitView } = useReactFlow();
   // 解析 node
@@ -50,6 +51,17 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
       }
     })
   }, [props.nodes, direction])
+
+  // 解析 edge
+  const edges = useMemo(()=>{
+    return (props.edges || []).map((edge, index) => {
+      const id = edge.id || nanoid(5)
+      return {
+        ...edge,
+        id
+      }
+    })
+  }, [props.edges])
 
   // 生成布局
   const elements = useMemo(()=>{

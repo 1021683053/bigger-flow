@@ -1,0 +1,468 @@
+{
+    "code": 200,
+    "msg": "操作成功",
+    "traceId": "1229524323488894980",
+    "data": {
+        "id": "1229489134763118597",
+        "projectNo": "2025111005",
+        "projectName": "资源一号通-电子采购与智能监管系统",
+        "batchId": "15a219ec83a505bc61d7a1eeb7ff97a7",
+        "projectAction": "校长办公会审议",
+        "declarationAnnual": "2024",
+        "finishAnnual": "2025",
+        "declarationDeptId": "1226254244353544198",
+        "projectLeader": "张海峰",
+        "projectClassifyId": "1228346999334638643",
+        "projectTypeId": "1224366321349824843",
+        "proposedBudget": 430.0000,
+        "createTime": "2025-09-04 14:26:07",
+        "updateTime": "2025-09-04 14:26:07",
+        "createUserId": "1112790795943022634",
+        "batchName": "2025年一号通系统项目第一批",
+        "mainConstructionContent": "按照教育部对基本培训的有关要求，中仅有培训管理...",
+        "projectClassifyName": "项目分类B",
+        "projectTypeName": "已建",
+        "declarationDeptName": "分析测试中心",
+        "modelTypeList": [
+            {
+                "id": "1229492355661434890",
+                "projectId": "1229489134763118597",
+                "modelTypeName": "合同业务",
+                "projectModelList": [
+                    {
+                        "id": "1229497341682257939",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492355661434890",
+                        "modelName": "合同流程",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254249848082453",
+                        "modelDesc": "合同流程",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "后勤管理处",
+                        "modelStatusName": "已完成"
+                    },
+                    {
+                        "id": "1229497283079442449",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492355661434890",
+                        "modelName": "合同模板",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254247390220302",
+                        "modelDesc": "合同模板",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "交通管理科",
+                        "modelStatusName": "已完成"
+                    }
+                ]
+            },
+            {
+                "id": "1229492313382850568",
+                "projectId": "1229489134763118597",
+                "modelTypeName": "审批业务",
+                "projectModelList": [
+                    {
+                        "id": "1229497191635226639",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492313382850568",
+                        "modelName": "审批完成",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254247390220302",
+                        "modelDesc": "审批完成",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "交通管理科",
+                        "modelStatusName": "已完成"
+                    },
+                    {
+                        "id": "1229497148215791629",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492313382850568",
+                        "modelName": "待我审批",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254247390220302",
+                        "modelDesc": "待我审批",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "交通管理科",
+                        "modelStatusName": "已完成"
+                    }
+                ]
+            },
+            {
+                "id": "1229492287164256262",
+                "projectId": "1229489134763118597",
+                "modelTypeName": "订单业务",
+                "projectModelList": [
+                    {
+                        "id": "1229497020868333579",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492287164256262",
+                        "modelName": "商品管理",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254250200403990",
+                        "modelDesc": "商品管理",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "修缮工程管理科",
+                        "modelStatusName": "已完成"
+                    },
+                    {
+                        "id": "1229496960210309129",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492287164256262",
+                        "modelName": "订单管理",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254250200403990",
+                        "modelDesc": "订单管理",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "修缮工程管理科",
+                        "modelStatusName": "已完成"
+                    }
+                ]
+            },
+            {
+                "id": "1229492256118018052",
+                "projectId": "1229489134763118597",
+                "modelTypeName": "系统模块",
+                "projectModelList": [
+                    {
+                        "id": "1229496827150209031",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492256118018052",
+                        "modelName": "字典管理",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254246240981003",
+                        "modelDesc": "字典管理",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "公安处（党委保卫部）",
+                        "modelStatusName": "已完成"
+                    },
+                    {
+                        "id": "1229496689048555525",
+                        "projectId": "1229489134763118597",
+                        "modelTypeId": "1229492256118018052",
+                        "modelName": "菜单管理",
+                        "leaderId": "1226635246754206993",
+                        "leaderDeptId": "1226254246240981003",
+                        "modelDesc": "菜单管理动态配置",
+                        "planFinishDate": "2025-08-25",
+                        "modelStatusId": "1228421823398548614",
+                        "leaderName": "赵研斌:00000035",
+                        "leaderDeptName": "公安处（党委保卫部）",
+                        "modelStatusName": "已完成"
+                    }
+                ]
+            }
+        ],
+        "outputModelList": [
+            {
+                "modelId": "1229497341682257939",
+                "modelName": "合同流程",
+                "tableList": [
+                    {
+                        "id": "1229501274509152260",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497341682257939",
+                        "tableName": "合同模板表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "合同模板表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "合同流程",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "后勤管理处",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    },
+                    {
+                        "id": "1229499049384742932",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497341682257939",
+                        "tableName": "合同流程表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "合同流程表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "合同流程",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "后勤管理处",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229497283079442449",
+                "modelName": "合同模板",
+                "tableList": [
+                    {
+                        "id": "1229498995169169426",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497283079442449",
+                        "tableName": "合同模板表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "合同模板表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "合同模板",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "交通管理科",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229497191635226639",
+                "modelName": "审批完成",
+                "tableList": [
+                    {
+                        "id": "1229498949627416592",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497191635226639",
+                        "tableName": "审批完成表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "审批完成表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "审批完成",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "交通管理科",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229497148215791629",
+                "modelName": "待我审批",
+                "tableList": [
+                    {
+                        "id": "1229498885542645774",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497148215791629",
+                        "tableName": "待我审批表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "待我审批表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "待我审批",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "交通管理科",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229497020868333579",
+                "modelName": "商品管理",
+                "tableList": [
+                    {
+                        "id": "1229498824842678284",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229497020868333579",
+                        "tableName": "商品表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "商品表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "商品管理",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "修缮工程管理科",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229496960210309129",
+                "modelName": "订单管理",
+                "tableList": [
+                    {
+                        "id": "1229498762473377802",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229496960210309129",
+                        "tableName": "订单表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "订单表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "订单管理",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "修缮工程管理科",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229496827150209031",
+                "modelName": "字典管理",
+                "tableList": [
+                    {
+                        "id": "1229498501633806344",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229496827150209031",
+                        "tableName": "字典表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "字典表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "字典管理",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "公安处（党委保卫部）",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            },
+            {
+                "modelId": "1229496689048555525",
+                "modelName": "菜单管理",
+                "tableList": [
+                    {
+                        "id": "1229498465436962822",
+                        "projectId": "1229489134763118597",
+                        "modelId": "1229496689048555525",
+                        "tableName": "菜单表",
+                        "dataTypeId": "1228424904777536668",
+                        "tableDesc": "菜单表",
+                        "planOverTime": "2025-12-31",
+                        "tableStatusId": "1229072449375704025",
+                        "projectName": "资源一号通-电子采购与智能监管系统",
+                        "modelName": "菜单管理",
+                        "modelLeaderName": "赵研斌:00000035",
+                        "modelLeaderDeptName": "公安处（党委保卫部）",
+                        "dataTypeName": "教师数据",
+                        "tableStatusName": "未归集"
+                    }
+                ]
+            }
+        ],
+        "inputProjectList": [
+            {
+                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                "inputModelList": [
+                    {
+                        "modelId": "1229502613477789716",
+                        "modelName": "老师薪资管理",
+                        "tableList": [
+                            {
+                                "id": "1229503301515612191",
+                                "projectId": "1229501954506493959",
+                                "modelId": "1229502613477789716",
+                                "tableName": "老师薪资档位表",
+                                "dataTypeId": "1226254307146469561",
+                                "tableDesc": "老师薪资档位表",
+                                "planOverTime": "2025-12-31",
+                                "tableStatusId": "1229072449375704025",
+                                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                                "modelName": "老师薪资管理",
+                                "modelLeaderName": "赵研斌:00000035",
+                                "modelLeaderDeptName": "口腔科",
+                                "dataTypeName": "",
+                                "tableStatusName": "未归集"
+                            }
+                        ]
+                    },
+                    {
+                        "modelId": "1229502575473201170",
+                        "modelName": "老师信息管理",
+                        "tableList": [
+                            {
+                                "id": "1229503178295349277",
+                                "projectId": "1229501954506493959",
+                                "modelId": "1229502575473201170",
+                                "tableName": "老师基础信息表",
+                                "dataTypeId": "1228424931579139231",
+                                "tableDesc": "老师基础信息表",
+                                "planOverTime": "2025-12-31",
+                                "tableStatusId": "1229072449375704025",
+                                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                                "modelName": "老师信息管理",
+                                "modelLeaderName": "赵研斌:00000035",
+                                "modelLeaderDeptName": "口腔科",
+                                "dataTypeName": "学生数据",
+                                "tableStatusName": "未归集"
+                            }
+                        ]
+                    },
+                    {
+                        "modelId": "1229502459605553166",
+                        "modelName": "学习管理",
+                        "tableList": [
+                            {
+                                "id": "1229502989409062938",
+                                "projectId": "1229501954506493959",
+                                "modelId": "1229502459605553166",
+                                "tableName": "学生成绩表",
+                                "dataTypeId": "1228424931579139231",
+                                "tableDesc": "学生成绩表",
+                                "planOverTime": "2025-12-31",
+                                "tableStatusId": "1229072449375704025",
+                                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                                "modelName": "学习管理",
+                                "modelLeaderName": "赵研斌:00000035",
+                                "modelLeaderDeptName": "口腔科",
+                                "dataTypeName": "学生数据",
+                                "tableStatusName": "未归集"
+                            },
+                            {
+                                "id": "1229502953803616280",
+                                "projectId": "1229501954506493959",
+                                "modelId": "1229502459605553166",
+                                "tableName": "学生民族表",
+                                "dataTypeId": "1228424931579139231",
+                                "tableDesc": "学生民族表",
+                                "planOverTime": "2025-12-31",
+                                "tableStatusId": "1229072449375704025",
+                                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                                "modelName": "学习管理",
+                                "modelLeaderName": "赵研斌:00000035",
+                                "modelLeaderDeptName": "口腔科",
+                                "dataTypeName": "学生数据",
+                                "tableStatusName": "未归集"
+                            },
+                            {
+                                "id": "1229502900301074454",
+                                "projectId": "1229501954506493959",
+                                "modelId": "1229502459605553166",
+                                "tableName": "学生信息表",
+                                "dataTypeId": "1228424931579139231",
+                                "tableDesc": "学生信息表",
+                                "planOverTime": "2025-12-31",
+                                "tableStatusId": "1229072449375704025",
+                                "projectName": "学生一号通-本科生招生宣传综合管理与分析系统",
+                                "modelName": "学习管理",
+                                "modelLeaderName": "赵研斌:00000035",
+                                "modelLeaderDeptName": "口腔科",
+                                "dataTypeName": "学生数据",
+                                "tableStatusName": "未归集"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

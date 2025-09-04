@@ -17,7 +17,8 @@
     "@dagrejs/dagre": "^1.1.5",
     "@xyflow/react": "^12.8.4",
     "classnames": "^2.5.1",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "nanoid": "^5.1.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

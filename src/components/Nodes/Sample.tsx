@@ -2,6 +2,7 @@ import { Handle, type NodeProps, Position, useReactFlow } from '@xyflow/react'
 import { useMemo, type HTMLProps } from 'react'
 import { type NodeData } from './interface'
 import cx from 'classnames'
+import { isEmpty } from 'lodash-es'
 
 export type SampleData = NodeData & {
   elementProps?: HTMLProps<HTMLDivElement>
@@ -30,7 +31,7 @@ export const Sample = (props: NodeProps)=>{
   }, [getEdges, dynamicHandle, id])
 
   const marker = useMemo(()=>{
-    if( !data.marker ) return null
+    if( !data.marker || isEmpty(data.marker) ) return null
     const { type = 'outline', label, color, backgroundColor, style={}, render } = data.marker
     const markerStyle = {
       color,
