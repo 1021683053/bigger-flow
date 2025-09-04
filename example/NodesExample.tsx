@@ -1,7 +1,7 @@
 import { Background, ReactFlow, type Node, type Edge } from '@xyflow/react'
 
-import { nodeTypes } from '../components/Nodes'
-import { getDagreElements } from '../components/utils'
+import { nodeTypes } from '../src/components/Nodes'
+import { getDagreElements } from '../src/components/utils'
 
 const nodes: Node[] = [
   {

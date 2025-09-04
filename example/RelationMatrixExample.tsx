@@ -1,5 +1,5 @@
 import { Tooltip } from 'antd'
-import { RelationMatrix, type RelationMatrixNode, type RelationMatrixEdge } from '../components'
+import { RelationMatrix, ReactFlowProvider, type RelationMatrixNode, type RelationMatrixEdge } from '../src'
 
 const nodes: RelationMatrixNode[] = [
   {
@@ -152,16 +152,22 @@ export const RelationMatrixExample = ()=>{
       <h2>Relation Matrix Example</h2>
       
       <div style={{ width: '100%', height: 400 }} className='example-relation-matrix-horizontal'>
-        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' />
+        <ReactFlowProvider>
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' />
+        </ReactFlowProvider>
       </div>
 
       <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-vertical'>
-        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{  }} layout='dagre' direction='TB' />
+        <ReactFlowProvider>
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{  }} layout='dagre' direction='TB' />
+        </ReactFlowProvider>
       </div>
 
       <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-horizontal'>
-        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{ align: "DL" }} layout='dagre' />
-      </div>
+        <ReactFlowProvider>
+          <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{ align: "DL" }} layout='dagre' />
+        </ReactFlowProvider>
+      </div> 
     </div>
   )
 }

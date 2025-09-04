@@ -1,6 +1,6 @@
-import { ReactFlow, Background, type Edge, type ReactFlowProps, type Node, type BackgroundProps } from '@xyflow/react'
+import { ReactFlow, Background, useReactFlow, type Edge, type ReactFlowProps, type Node, type BackgroundProps } from '@xyflow/react'
 import { nodeTypes } from '../Nodes'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { getDagreElements, type DagreGraphOptions } from '../utils'
 import { type SampleData } from '../Nodes/Sample'
 import { type Direction } from '../interface'
@@ -18,13 +18,16 @@ export type RelationMatrixProps = {
   edges?: RelationMatrixEdge[]
   layout?: 'dagre' | false
   direction?: Direction
+  fitViewOnResize?: boolean
   flowProps?: ReactFlowProps
   backgroundProps?: BackgroundProps
   dagreOptions?: Partial<DagreGraphOptions>
 }
 
 export const RelationMatrix = (props: RelationMatrixProps)=>{
-  const { dagreOptions, layout = 'dagre', edges = [], direction = 'LR', backgroundProps = {}, flowProps = {} } = props;
+  const { dagreOptions, layout = 'dagre', edges = [], direction = 'LR', backgroundProps = {}, flowProps = {}, fitViewOnResize = true } = props;
+  const flowRef = useRef<HTMLDivElement>(null);
+  const { fitView } = useReactFlow();
   // 解析 node
   const nodes = useMemo(()=>{
     return (props.nodes || []).map(node => {
@@ -62,6 +65,16 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
     })
   }, [nodes, edges, layout, direction, dagreOptions])
 
+  // 自动适应宽高
+  useEffect(()=>{
+    if (!flowRef.current || !fitViewOnResize) return;
+    const resizeObserver = new ResizeObserver(() => {
+      fitView();
+    });
+    resizeObserver.observe(flowRef.current);
+    return () => resizeObserver.disconnect();
+  }, [fitView, fitViewOnResize])
+
   return (
     <ReactFlow
       nodes={elements.nodes}
@@ -69,8 +82,10 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
       nodeTypes={nodeTypes}
       proOptions={{ hideAttribution: true }}
       draggable={false}
+      fitView
       nodesConnectable={false}
       minZoom={0.2}
+      ref={flowRef}
       {...flowProps}
     >
       <Background {...backgroundProps} />

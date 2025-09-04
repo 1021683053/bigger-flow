@@ -1,7 +1,7 @@
 import { createElement } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
-import { NodesExample } from './example/NodesExample'
-import { RelationMatrixExample } from './example/RelationMatrixExample'
+import { NodesExample } from './NodesExample'
+import { RelationMatrixExample } from './RelationMatrixExample'
 
 const examples = [
   { path: '/nodes', component: NodesExample },
