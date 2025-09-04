@@ -1,5 +1,6 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import { flatMap } from 'lodash-es'
+import { ModalForm } from '@ant-design/pro-components'
 import { RelationMatrix, ReactFlowProvider, type RelationMatrixNode, type RelationMatrixEdge } from '../src'
 import jsonData from './data/001-data.json'
 const sleep = (ms: number) => {
@@ -146,7 +147,7 @@ const transformData = (data: typeof jsonData['data']): { nodes: RelationMatrixNo
     // 循环output模型列表
     outputModelList.forEach((model)=>{
       const { modelId, modelName, tableList } = model
-      
+
       // 根据 modelId 反查模型状态
       const modelInfo = modelList.find(model=> model.id === modelId)
       const marker = modelInfo && modelInfo.modelStatusName ? {
@@ -158,7 +159,13 @@ const transformData = (data: typeof jsonData['data']): { nodes: RelationMatrixNo
         type: 'sample',
         data: { 
           label: modelName,
-          marker
+          marker,
+          elementProps: {
+            // 点击事件
+            onClick: ()=>{
+              alert(`点击了模型：${modelName}`)
+            }
+          }
         }
       }
       nodes.push(modelNode) // 增加到节点列表
@@ -178,7 +185,11 @@ const transformData = (data: typeof jsonData['data']): { nodes: RelationMatrixNo
           type: 'sample',
           data: { 
             label: tableName,
-            marker
+            marker,
+            // Modal 弹出框
+            render: (element, nodeProps)=>{
+              return <ModalForm trigger={element} title={tableName}><pre>{JSON.stringify(nodeProps, null, 2)}</pre></ModalForm>
+            }
           }
         }
         nodes.push(tableNode) // 增加到节点列表
