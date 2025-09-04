@@ -151,12 +151,16 @@ export const RelationMatrixExample = ()=>{
     <div className="example-container">
       <h2>Relation Matrix Example</h2>
       
-      <div style={{ width: '100%', height: 400 }} className='.example-relation-matrix-horizontal'>
+      <div style={{ width: '100%', height: 400 }} className='example-relation-matrix-horizontal'>
         <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} layout='dagre' />
       </div>
 
       <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-vertical'>
         <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{  }} layout='dagre' direction='TB' />
+      </div>
+
+      <div style={{ width: '100%', height: 400, marginTop: 24 }} className='example-relation-matrix-horizontal'>
+        <RelationMatrix edges={edges} nodes={nodes} flowProps={{ fitView: true }} dagreOptions={{ align: "DL" }} layout='dagre' />
       </div>
     </div>
   )

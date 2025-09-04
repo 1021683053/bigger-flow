@@ -1,7 +1,7 @@
 import { ReactFlow, Background, type Edge, type ReactFlowProps, type Node, type BackgroundProps } from '@xyflow/react'
 import { nodeTypes } from '../Nodes'
 import { useMemo } from 'react'
-import { getDagreElements } from '../utils'
+import { getDagreElements, type DagreGraphOptions } from '../utils'
 import { type SampleData } from '../Nodes/Sample'
 import { type Direction } from '../interface'
 
@@ -20,7 +20,7 @@ export type RelationMatrixProps = {
   direction?: Direction
   flowProps?: ReactFlowProps
   backgroundProps?: BackgroundProps
-  dagreOptions?: Partial<Parameters<typeof getDagreElements>[2]>
+  dagreOptions?: Partial<DagreGraphOptions>
 }
 
 export const RelationMatrix = (props: RelationMatrixProps)=>{
