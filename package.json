@@ -1,11 +1,13 @@
 {
   "name": "bigger-flow",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1-beta.1",
   "type": "module",
   "main": "lib/lib.cjs.js",
   "module": "lib/lib.es.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build -c ./vite.lib.config.ts",
