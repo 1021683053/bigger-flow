@@ -1,4 +1,4 @@
-import { ReactFlow, Background, type Edge, type ReactFlowProps, type Node } from '@xyflow/react'
+import { ReactFlow, Background, type Edge, type ReactFlowProps, type Node, type BackgroundProps } from '@xyflow/react'
 import { nodeTypes } from '../Nodes'
 import { useMemo } from 'react'
 import { getDagreElements } from '../utils'
@@ -19,11 +19,12 @@ export type RelationMatrixProps = {
   layout?: 'dagre' | false
   direction?: Direction
   flowProps?: ReactFlowProps
-  dagreOptions?: Parameters<typeof getDagreElements>[2]
+  backgroundProps?: BackgroundProps
+  dagreOptions?: Partial<Parameters<typeof getDagreElements>[2]>
 }
 
 export const RelationMatrix = (props: RelationMatrixProps)=>{
-  const { dagreOptions, layout = 'dagre', edges = [], direction = 'LR' } = props;
+  const { dagreOptions, layout = 'dagre', edges = [], direction = 'LR', backgroundProps = {}, flowProps = {} } = props;
   // 解析 node
   const nodes = useMemo(()=>{
     return (props.nodes || []).map(node => {
@@ -57,8 +58,6 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
     }
     return getDagreElements(nodes, edges || [], {
       direction,
-      horizontalGap: 100,
-      verticalGap: 50,
       ...dagreOptions
     })
   }, [nodes, edges, layout, direction, dagreOptions])
@@ -71,9 +70,10 @@ export const RelationMatrix = (props: RelationMatrixProps)=>{
       proOptions={{ hideAttribution: true }}
       draggable={false}
       nodesConnectable={false}
-      {...props.flowProps}
+      minZoom={0.2}
+      {...flowProps}
     >
-      <Background />
+      <Background {...backgroundProps} />
     </ReactFlow>
   )
 }

@@ -44,7 +44,7 @@ const edges: Edge[] = [
 ]
 
 export const NodesExample = () => {
-  const elements = getDagreElements(nodes, edges, { direction: 'LR', horizontalGap: 200, verticalGap: 100 });
+  const elements = getDagreElements(nodes, edges, { direction: 'LR' });
   return (
     <ReactFlow nodes={elements.nodes} edges={elements.edges} nodeTypes={nodeTypes} proOptions={{ hideAttribution: true }} fitView>
       <Background />

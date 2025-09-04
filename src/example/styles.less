@@ -1,19 +1,38 @@
-.example-center-node-before, .example-center-node-after{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-size: 30px;
-  background-image: url('/public/arrow-right.svg');
 
-  mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0.2) 100%);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-  z-index: 9;
+
+.example-relation-matrix-vertical, .example-relation-matrix-horizontal{
+  .example-center-node-before, .example-center-node-after{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    background-image: url('/public/arrow-right.svg');
+
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0.2) 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    z-index: 9;
+  }
+
+
 }
 
-.example-center-node-before{
-  left: -38px;
+.example-relation-matrix-horizontal{
+  .example-center-node-before{
+    left: -38px;
+  }
+  .example-center-node-after{
+    right: -38px;
+  }
 }
-.example-center-node-after{
-  right: -38px;
+
+.example-relation-matrix-vertical{
+  .example-center-node-before{
+    top: -38px;
+    transform: rotate(90deg);
+  }
+  .example-center-node-after{
+    bottom: -38px;
+    transform: rotate(90deg);
+  }
 }

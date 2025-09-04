@@ -3,20 +3,18 @@ import Dagre, { type GraphLabel } from '@dagrejs/dagre';
 
 export type DagreGraphOptions = {
   direction: 'TB' | 'LR';
-  horizontalGap?: number; // 横向间距
-  verticalGap?: number; // 纵向间距
-  graphLabel?: GraphLabel;
-}
+} & GraphLabel
 
 export const getDagreElements = (nodes: Node[], edges: Edge[], options: DagreGraphOptions) => {
-  const { horizontalGap = 100, verticalGap = 50, direction = 'LR', graphLabel } = options;
+  const { direction = 'LR', nodesep = 50, ranksep = 100, ...graphLabel } = options;
   const graph = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({})).setGraph({
     rankdir: direction,
-    nodesep: verticalGap,
+    nodesep,
+    ranksep,
     ...graphLabel
   });
   nodes.forEach(node => {
-    graph.setNode(node.id, { width: (node.width || 100) + horizontalGap, height: (node.height || 50) });
+    graph.setNode(node.id, { width: (node.width || 100) , height: (node.height || 50) });
   });
   edges.forEach(edge => {
     graph.setEdge(edge.source, edge.target);
